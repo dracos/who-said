@@ -1,0 +1,174 @@
+img {
+	border: none;
+}
+
+input {
+    font-size: 99%;
+}
+
+a:link {
+    color: #0000ff;
+}
+a:visited {
+    color: #6666ff;
+}
+
+h1, h2, h3, h4 {
+	font-family: Arvo, Rockwell, "RockwellStd", Arial, Helvetica, sans-serif;
+	margin-top: 1em;
+}
+h1 {
+	text-transform: none;
+	margin-top: 0;
+}
+h1 a:link, h1 a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+p {
+	line-height: 1.3;
+	margin-top: 1em;
+}
+li {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+body {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+	margin: 0 auto 2em;
+	background-color: #005871;
+	max-width: 60em;
+}
+
+#b {
+	border: solid 2px #003d56;
+    border-top-width: 0;
+	background-color: #ffffff;
+	padding: 1em 2em 0;
+    border-bottom-left-radius: 1em;
+    -webkit-border-bottom-left-radius: 1em;
+    -moz-border-radius-bottomleft: 1em;
+    /* border-bottom-right-radius: 1em;
+    -webkit-border-bottom-right-radius: 1em;
+    -moz-border-radius-bottomright: 1em;
+    */
+}
+
+h4 {
+	background: #eeeeee;
+	border-top: solid 1px #999999;
+	border-bottom: solid 1px #999999;
+	color: #999999;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.hi {
+	background-color: #600;
+}
+
+form#search {
+	float: right;
+}
+
+#searchresults {
+	position: relative;
+	color: white;
+	background-color: black;
+	list-style-type: none;
+	width: 21em;
+	padding: 5px;
+}
+
+#name {
+	float: right;
+}
+#footer {
+	font-size: 90%;
+	text-align: right;
+	clear: both;
+	color: white;
+    margin-top: 3px;
+}
+#footer a:link, #footer a:visited {
+    color: white;
+}
+
+.t {
+	position: absolute;
+	text-align: left;
+	left: 22em;
+	width: 17em;
+	color: #666666;
+}
+
+#blurb {
+	float: right;
+	width: 15em;
+	margin-top: 0.5em;
+}
+
+#front_eps {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	clear: both;
+}
+#front_eps li {
+	float: left;
+	text-align: center;
+	width: 200px;
+	height: 160px;
+}
+#front_eps a {
+	text-decoration: none;
+}
+#front_eps img {
+	margin-bottom: 5px;
+}
+
+#eps_side, #eps_side ul {
+	margin: 0;
+	padding: 0 0 0 1.5em;
+}
+#eps_side a {
+	text-decoration: none;
+}
+#eps_side img {
+	margin-top: 5px;
+}
+
+#error {
+	color: #cc0000;
+	font-size: 125%;
+}
+
+#searchresults a, #searchresults a:link, #searchresults a:visited {
+	color: white;
+	text-decoration: none;
+}
+#searchresults a:hover {
+	text-decoration: underline;
+}
+
+#examples {
+	text-align: center;
+	float: right;
+	width: 13em;
+	font-size: 120%;
+	margin: 0 0 0.5em 1em;
+}
+
+#missing {
+    clear: both;
+}
+#missing img {
+    position: absolute;
+    top: -1em;
+    right: -1.5em;
+    cursor: pointer;
+    cursor: hand;
+}
+
