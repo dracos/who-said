@@ -406,7 +406,7 @@ Some example searches:
 <a href="/?q=tyler+-rose">Tyler&nbsp;-Rose</a>,
 <a href="/?q=sonic">sonic</a>,
 <a href="/?q=silence">silence</a>,
-<a href="/?q='very clever'">"very clever"</a>,
+<a href="/?q='very+clever'">"very clever"</a>,
 <a href="/?noise=1"><i>all stage directions</i></a>,
 <a href="/?q=doctor+colour:cyan"><i>all cyan subtitles with &ldquo;doctor&rdquo;</i></a>
 </div>
@@ -434,6 +434,8 @@ for ($s=1; $s<=NUM_SERIES; $s++) {
 	for ($e=1; $e<=$episodes[$s]; $e++) {
 		if ($s==3 && $e==5) continue;
 		echo '<li>';
+		if (!file_exists("images/$s-{$e}S.png"))
+			echo '<small><i>pic coming soon</i></small><br><br>';
 		if ($s!=3 || $e!=5) echo '<a href="/?q=series:', $s, '+ep:', $e, '">';
 		if (file_exists("images/$s-{$e}S.png"))
 			echo '<img alt="" src="images/', $s, '-', $e, 'S.png"><br>';
