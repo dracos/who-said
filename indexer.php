@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
  * Simple indexer to stick all the Dr Who subtitles into Xapian
@@ -10,7 +10,9 @@
 
 $colors = array(
 	'#fefe00' => 'yellow',
+	'#ffff00' => 'yellow',
 	'#00ffff' => 'cyan',
+	'#00fffd' => 'cyan',
 	'#00fefc' => 'cyan',
 	'#ededed' => 'white',
 	'#ececec' => 'white',
@@ -57,6 +59,7 @@ foreach ($argv as $file) {
 		# $text = preg_replace('#((<span[^>]*>).*?[^>])<br/>#', '$1</span><br/>$2', $row[4]);
 		$text = $row[4];
 		preg_match_all('/<span tts:color="([^"]*)" tts:textAlign="([^"]*)">(.*?)<\/span>/', $text, $spans, PREG_SET_ORDER);
+        $lasttextarr = array();
 		foreach ($spans as $span) {
 			$color = $span[1];
 			if (!$colors[$color]) {

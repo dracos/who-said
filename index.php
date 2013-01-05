@@ -8,14 +8,15 @@
 
 include_once 'search.php';
 
-define('NUM_SERIES', 6);
+define('NUM_SERIES', 7);
 $episodes = array(
     1 => 14,
     2 => 14,
     3 => 14,
     4 => 18,
     5 => 14,
-    6 => 13,
+    6 => 14,
+    7 => 6,
 );
 
 # Construct query string from optional advanced search parameters
@@ -100,7 +101,7 @@ if (isset($_GET['source'])) {
 		$series = $row['series'];
 		$ep = $row['ep'];
 		$time = time_index($series, $ep, $row['begin']);
-		if ($time>1) continue;
+		#if ($time>1) continue;
 		$text = $row['text'];
 		if (preg_match('#' . $query . '[\s,.!?]+([\w\']+)#i', $text, $m)) $next[strtolower($m[1])]++;
 		if (preg_match('#([\w\']+)[\s,.!?]+' . $query. '#i', $text, $m)) $prev[strtolower($m[1])]++;
@@ -128,13 +129,13 @@ if (isset($_GET['source'])) {
 			}
 		}
 		echo '&chxt=y,x,x&chxl=0:|0|'.$max;
-		$s = '|1:|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|6|7|8|9|10|11|12|13|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|X|X|X|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|5|6|7|8|9|10|11|12|13';
+		$s = '|1:|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|6|7|8|9|10|11|12|13|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|X|X|X|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|5|X';
         $c1 = substr_count($s, '|');
         echo $s;
-		$s = '|2:|||||||Series+1||||||||||||||Series+2||||||||||||||Series+3|||||||||||||Series+4||||||||||||||||||Series+5||||||||||||||Series+6||||||';
+		$s = '|2:|||||||Series+1||||||||||||||Series+2||||||||||||||Series+3|||||||||||||Series+4||||||||||||||||||Series+5|||||||||||||||Series+6||||||||||Series+7||';
         $c2 = substr_count($s, '|');
         echo $s;
-		echo '&chxs=1,666666,10,0|2,666666,10,0&chg=0,0&chco=005aaa&chg=1.176,0'; # Last num from trial and error! Was 1.923 for Series 1-4
+		echo '&chxs=1,666666,10,0|2,666666,10,0&chg=0,0&chco=005aaa&chg=1.087,0'; # Last num from trial and error! Was 1.923 for Series 1-4
 		echo '">';
         if ($c1 != $c2) print "ERROR in | counts $c1 $c2";
 	}
@@ -387,6 +388,13 @@ function episode_lookup($n) {
         '6-11' => 'The God Complex',
         '6-12' => 'Closing Time',
         '6-13' => 'The Wedding of River Song',
+        '6-14' => 'The Doctor, the Widow and the Wardrobe',
+        '7-1' => 'Asylum of the Daleks',
+        '7-2' => 'Dinosaurs on a Spaceship',
+        '7-3' => 'A Town Called Mercy',
+        '7-4' => 'The Power of Three',
+        '7-5' => 'The Angels Take Manhattan',
+        '7-6' => 'The Snowmen',
 	);
 	return $eps[$n];
 }
@@ -411,12 +419,11 @@ Some example searches:
 <a href="/?q=doctor+colour:cyan"><i>all cyan subtitles with &ldquo;doctor&rdquo;</i></a>
 </div>
 
-<p>I created this project as part of BBC Mashed 2008. It takes the
-subtitles from Doctor Who and makes them searchable; note that there are some
+<p>This site takes the
+subtitles from Doctor Who and makes them searchable; note that there are currently a few
 <a id="missing_link" href="#missing">missing areas</a>.
 You can search by word, phrase, stage direction-ness, subtitle colour or
-position, series, episode, or time within episode. Most episodes (currently series
-1 to 4) have
+position, series, episode, or time within episode. Episodes in series 1 to 4 have
 a representative tag cloud, and search results have a line graph showing usage
 throughout the series. All subtitles on search results are clickable to go to
 that point in the full episode list of subtitles.
@@ -434,8 +441,10 @@ for ($s=1; $s<=NUM_SERIES; $s++) {
 	for ($e=1; $e<=$episodes[$s]; $e++) {
 		if ($s==3 && $e==5) continue;
 		echo '<li>';
-		if (!file_exists("images/$s-{$e}S.png"))
-			echo '<small><i>pic coming soon</i></small><br><br>';
+		if (!file_exists("images/$s-{$e}S.png")) {
+			#echo '<small><i>pic coming soon</i></small><br><br>';
+            echo '<br><br>';
+        }
 		if ($s!=3 || $e!=5) echo '<a href="/?q=series:', $s, '+ep:', $e, '">';
 		if (file_exists("images/$s-{$e}S.png"))
 			echo '<img alt="" src="images/', $s, '-', $e, 'S.png"><br>';
@@ -459,8 +468,7 @@ for ($s=1; $s<=NUM_SERIES; $s++) {
 <li>13.5 minutes of Voyage of the Damned
 <li>Series 4: All of episodes 1, 2, 4, 7, 10, 11, 12, and 13; 37.5 minutes of episode 9; only 10&ndash;13 minutes of episodes 3, 5, 6, and 8.
 <li>Specials between series 4 and 5: All of them.
-<li>Series 5: All episodes.
-<li>Series 6: All episodes.
+<li>Series 5-7: All episodes.
 </ul>
 </div>
 
