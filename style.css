@@ -14,7 +14,7 @@ a:visited {
 }
 
 h1, h2, h3, h4 {
-	font-family: Arvo, Rockwell, "RockwellStd", Arial, Helvetica, sans-serif;
+	font-family: 'Yanone Kaffeesatz',sans-serif;
 	margin-top: 1em;
 }
 h1 {
@@ -36,16 +36,18 @@ li {
 }
 
 body {
-	font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
-	margin: 0 auto 2em;
-	background-color: #005871;
-	max-width: 60em;
+    font-family:'Gentium Book Basic',serif;
+	color: #212;
+	background-color: #fff;
+    margin:0;
+    padding:0;
+    font-size:1rem;
+    line-height:1.4
 }
 
 #b {
-	border: solid 2px #003d56;
-    border-top-width: 0;
-	background-color: #ffffff;
+max-width: 62em;
+margin: 0 auto;
 	padding: 1em 2em 0;
     border-bottom-left-radius: 1em;
     -webkit-border-bottom-left-radius: 1em;
@@ -54,6 +56,33 @@ body {
     -webkit-border-bottom-right-radius: 1em;
     -moz-border-radius-bottomright: 1em;
     */
+}
+
+header {
+    color: #a9a;
+    background-color: #434;
+    border-bottom: solid .5em #323;
+}
+header div {
+    margin: 0 auto;
+    padding: 1em 5%;
+    max-width: 62rem;
+}
+header p {
+	font-family: 'Yanone Kaffeesatz',sans-serif;
+    margin:0;
+    font-size:2rem;
+    font-weight:normal;
+    color:#dcd
+}
+header a:link, header a:visited {
+    color: #dcd;
+    -webkit-transition: color .5s;
+    -moz-transition: color .5s;
+    text-decoration: none;
+}
+header a:hover {
+    color: #fef;
 }
 
 h4 {
@@ -74,6 +103,7 @@ form#search {
 }
 
 #searchresults {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
 	position: relative;
 	color: white;
 	background-color: black;
@@ -85,18 +115,21 @@ form#search {
 #name {
 	float: right;
 }
-#footer {
-	font-size: 90%;
+footer {
+    background-color: #434;
+    color: #a9a;
+    border-top:solid .5em #323;
+    padding: 1em;
 	text-align: right;
 	clear: both;
-	color: white;
     margin-top: 3px;
 }
-#footer a:link, #footer a:visited {
+footer a:link, footer a:visited {
     color: white;
 }
 
 .t {
+    font-family:'Gentium Book Basic',serif;
 	position: absolute;
 	text-align: left;
 	left: 22em;

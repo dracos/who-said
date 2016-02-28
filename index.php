@@ -52,12 +52,31 @@ $h_query = htmlspecialchars($query);
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title><?php if ($query) echo "&lsquo;$h_query&rsquo; | "; ?>Who Said... Subtitle Search, by Matthew Somerville</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+            WebFontConfig = {
+                //google: { families: [ 'Tinos', 'Yanone Kaffeesatz' ] }
+                google: { families: [ 'Gentium Book Basic:normal,b,i,bi', 'Yanone Kaffeesatz:normal,bold' ] }
+            };
+            (function() {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                    '://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            })();
+        </script>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="js.js"></script>
 </head>
 <body>
+
+<header role="banner"><div><p><a href="http://dracos.co.uk/">Matthew Somerville</a></p></div></header>
+
 <div id="b">
 
 <form action="/" method="get" id="search">
@@ -242,12 +261,13 @@ footer();
 function footer() { ?>
 <div style="clear:both"></div>
 </div>
-<p id="footer">
+<footer>
 Subtitle data loaded into a <a href="http://www.xapian.org/">Xapian</a> database,
 graphs plotted with <a href="http://code.google.com/apis/chart/">Google Charts API</a>,
 <br>and tag clouds drawn by <a href="http://wordle.net/">Wordle</a>.
 Everything else (<a href="https://github.com/dracos/who-said">source</a>) by <a href="http://www.dracos.co.uk/">Matthew Somerville</a>
-(<a href="http://twitter.com/dracos">@dracos</a>)</p>
+(<a href="http://twitter.com/dracos">@dracos</a>)
+</footer>
 </body>
 </html>
 <?php
