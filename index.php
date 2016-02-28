@@ -8,7 +8,7 @@
 
 include_once 'search.php';
 
-define('NUM_SERIES', 7);
+define('NUM_SERIES', 9);
 $episodes = array(
     1 => 14,
     2 => 14,
@@ -16,7 +16,9 @@ $episodes = array(
     4 => 18,
     5 => 14,
     6 => 14,
-    7 => 6,
+    7 => 16,
+    8 => 13,
+    9 => 13,
 );
 
 # Construct query string from optional advanced search parameters
@@ -129,10 +131,10 @@ if (isset($_GET['source'])) {
 			}
 		}
 		echo '&chxt=y,x,x&chxl=0:|0|'.$max;
-		$s = '|1:|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|6|7|8|9|10|11|12|13|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|X|X|X|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|5|X';
+		$s = '|1:|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|6|7|8|9|10|11|12|13|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|X|X|X|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|5|6|7|8|9|10|11|12|13|X|1|2|3|4|5|X|6|7|8|9|10|11|12|13|X|X|1|2|3|4|5|6|7|8|9|10|11|12|X|1|2|3|4|5|6|7|8|9|10|11|12|X';
         $c1 = substr_count($s, '|');
         echo $s;
-		$s = '|2:|||||||Series+1||||||||||||||Series+2||||||||||||||Series+3|||||||||||||Series+4||||||||||||||||||Series+5|||||||||||||||Series+6||||||||||Series+7||';
+		$s = '|2:|||||||Series+1||||||||||||||Series+2||||||||||||||Series+3|||||||||||||Series+4||||||||||||||||||Series+5|||||||||||||||Series+6||||||||||||||Series+7|||||||||||||||Series+8|||||||||||||Series+9||||||';
         $c2 = substr_count($s, '|');
         echo $s;
 		echo '&chxs=1,666666,10,0|2,666666,10,0&chg=0,0&chco=005aaa&chg=1.087,0'; # Last num from trial and error! Was 1.923 for Series 1-4
@@ -395,6 +397,42 @@ function episode_lookup($n) {
         '7-4' => 'The Power of Three',
         '7-5' => 'The Angels Take Manhattan',
         '7-6' => 'The Snowmen',
+        '7-7' => 'The Bells of Saint John',
+        '7-8' => 'The Rings of Akhaten',
+        '7-9' => 'Cold War',
+        '7-10' => 'Hide',
+        '7-11' => 'Journey to the Centre of the TARDIS',
+        '7-12' => 'The Crimson Horror',
+        '7-13' => 'Nightmare in Silver',
+        '7-14' => 'The Name of the Doctor',
+        '7-15' => 'The Day of the Doctor',
+        '7-16' => 'The Time of the Doctor',
+        '8-1' => 'Deep Breath',
+        '8-2' => 'Into the Dalek',
+        '8-3' => 'Robot of Sherwood',
+        '8-4' => 'Listen',
+        '8-5' => 'Time Heist',
+        '8-6' => 'The Caretaker',
+        '8-7' => 'Kill the Moon',
+        '8-8' => 'Mummy on the Orient Express',
+        '8-9' => 'Flatline',
+        '8-10' => 'In the Forest of the Night',
+        '8-11' => 'Dark Water',
+        '8-12' => 'Death in Heaven',
+        '8-13' => 'Last Christmas',
+        '9-1' => 'The Magician’s Apprentice',
+        '9-2' => 'The Witch’s Familiar',
+        '9-3' => 'Under the Lake',
+        '9-4' => 'Before the Flood',
+        '9-5' => 'The Girl Who Died',
+        '9-6' => 'The Woman Who Lived',
+        '9-7' => 'The Zygon Invasion',
+        '9-8' => 'The Zygon Inversion',
+        '9-9' => 'Sleep No More',
+        '9-10' => 'Face the Raven',
+        '9-11' => 'Heaven Sent',
+        '9-12' => 'Hell Bent',
+        '9-13' => 'The Husbands of River Song',
 	);
 	return $eps[$n];
 }
@@ -409,9 +447,10 @@ Some example searches:
 <a href="/?q=martha">Martha</a> /
 <a href="/?q=donna">Donna</a> /
 <a href="/?q=amy">Amy</a> /
-<a href="/?q=rory">Rory</a>,
+<a href="/?q=rory">Rory</a> /
+<a href="/?q=clara">Clara</a>,
 <a href="/?q=tardis">TARDIS</a>,
-<a href="/?q=tyler+-rose">Tyler&nbsp;-Rose</a>,
+<a href="/?q=black+-hole">black&nbsp;-hole</a>,
 <a href="/?q=sonic">sonic</a>,
 <a href="/?q=silence">silence</a>,
 <a href="/?q='very+clever'">"very clever"</a>,
@@ -420,8 +459,7 @@ Some example searches:
 </div>
 
 <p>This site takes the
-subtitles from Doctor Who and makes them searchable; note that there are currently a few
-<a id="missing_link" href="#missing">missing areas</a>.
+subtitles from Doctor Who and makes them searchable.
 You can search by word, phrase, stage direction-ness, subtitle colour or
 position, series, episode, or time within episode. Episodes in series 1 to 4 have
 a representative tag cloud, and search results have a line graph showing usage
@@ -440,11 +478,11 @@ that point in the full episode list of subtitles.
 for ($s=1; $s<=NUM_SERIES; $s++) {
 	for ($e=1; $e<=$episodes[$s]; $e++) {
 		if ($s==3 && $e==5) continue;
-		echo '<li>';
-		if (!file_exists("images/$s-{$e}S.png")) {
-			#echo '<small><i>pic coming soon</i></small><br><br>';
-            echo '<br><br>';
-        }
+		if (file_exists("images/$s-{$e}S.png")) {
+			echo '<li class="pic">';
+		} else {
+			echo '<li>';
+		}
 		if ($s!=3 || $e!=5) echo '<a href="/?q=series:', $s, '+ep:', $e, '">';
 		if (file_exists("images/$s-{$e}S.png"))
 			echo '<img alt="" src="images/', $s, '-', $e, 'S.png"><br>';
@@ -455,22 +493,6 @@ for ($s=1; $s<=NUM_SERIES; $s++) {
 
 ?>
 </ul>
-
-<div id="missing">
-<p>Here&rsquo;s the precise details of what I have:</p>
-
-<ul>
-<li>Series 1: All of episodes 1, 4, 5, 7, 9, and 13; almost all of episode 10; around 30 minutes of episodes 3 and 12; around 20 minutes of episodes 2 and 6; 13 minutes of episodes 8 and 11.
-<li>20 minutes of Christmas Invasion
-<li>Series 2: All of episodes 3, 4, 9, 10, 13; around 35 minutes of episodes 6, 7, and 8; around 20&ndash;25 minutes of episodes 5 and 11; and around 15 minutes for episodes 1, 2, and 12.
-<li>All of The Runaway Bride
-<li>Series 3: All of episodes 1, 3, 6, 7, 9, 10, 11, 12, 13; around half an hour of episodes 2 and 8; 13 minutes of episode 4; none of episode 5.
-<li>13.5 minutes of Voyage of the Damned
-<li>Series 4: All of episodes 1, 2, 4, 7, 10, 11, 12, and 13; 37.5 minutes of episode 9; only 10&ndash;13 minutes of episodes 3, 5, 6, and 8.
-<li>Specials between series 4 and 5: All of them.
-<li>Series 5-7: All episodes.
-</ul>
-</div>
 
 <?php
 }

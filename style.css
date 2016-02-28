@@ -120,6 +120,9 @@ form#search {
 	float: left;
 	text-align: center;
 	width: 200px;
+	height: 80px;
+}
+#front_eps li.pic {
 	height: 160px;
 }
 #front_eps a {

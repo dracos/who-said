@@ -12,12 +12,17 @@ $colors = array(
 	'#fefe00' => 'yellow',
 	'#ffff00' => 'yellow',
 	'#00ffff' => 'cyan',
+	'#01ffff' => 'cyan',
 	'#00fffd' => 'cyan',
 	'#00fefc' => 'cyan',
+        '#7f7f7f' => 'white',
 	'#ededed' => 'white',
 	'#ececec' => 'white',
 	'#00ff00' => 'green',
+	'#00ff01' => 'green',
 	'#00fe00' => 'green',
+	'#eeeeee' => 'white',
+	'#f3a29b' => 'yellow', # blank in 2-05
 	'#ffffff' => 'white',
 );
 
