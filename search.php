@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
  * Simple query parser to search our Dr Who subtitles

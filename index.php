@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
  * Front end for Dr Who subtitles searching, graphing, tagclouding
@@ -49,7 +49,7 @@ $h_query = htmlspecialchars($query);
 <html lang="en-gb">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title><? if ($query) echo "&lsquo;$h_query&rsquo; | "; ?>Who Said... Subtitle Search, by Matthew Somerville</title>
+<title><?php if ($query) echo "&lsquo;$h_query&rsquo; | "; ?>Who Said... Subtitle Search, by Matthew Somerville</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
@@ -63,7 +63,7 @@ $h_query = htmlspecialchars($query);
 <input type="submit" value="Search">
 </form>
 
-<h1><a href="/">Who Said&hellip; <small>&ndash; Subtitle Search<?
+<h1><a href="/">Who Said&hellip; <small>&ndash; Subtitle Search<?php
 
 if ($query) {
 	echo "<br>&lsquo;$h_query&rsquo;";
@@ -160,10 +160,10 @@ if (isset($_GET['source'])) {
 <h3>Advanced Search</h3>
 <p>Words: <input type="text" name="q" value="" size="20">
 <br>Series: <select name="series">
-<? for ($k=1; $k<=NUM_SERIES; $k++) { print "<option>$k"; } ?>
+<?php for ($k=1; $k<=NUM_SERIES; $k++) { print "<option>$k"; } ?>
 </select>
 <br>Episode: <select name="ep">
-<? for ($k=1; $k<=14; $k++) { print "<option>$k"; } ?>
+<?php for ($k=1; $k<=14; $k++) { print "<option>$k"; } ?>
 </select>
 <br>Alignment: <select name="align"><option value="">- Any -<option value="left">Left<option value="center">Centred<option value="right">Right</select>
 <br>Colour: <select name="colour"><option value="">- Any -<option>White<option>Cyan<option>Yellow<option>Green</select>
@@ -178,7 +178,7 @@ if (isset($_GET['source'])) {
 
 <div id="eps_side">
 
-<?
+<?php
 for ($s=1; $s<=NUM_SERIES; $s++) {
 	echo "\n<h3>Series $s</h3> <ul>";
 	for ($e=1; $e<=$episodes[$s]; $e++) {
@@ -201,7 +201,7 @@ for ($s=1; $s<=NUM_SERIES; $s++) {
 <h2>Results</h2>
 
 <ul id='searchresults'>
-<?
+<?php
 	foreach ($data as $row) {
 		$text = $row['text'];
 		$text = preg_replace("#$query#i", '<span class="hi">$0</span>', $text);
@@ -248,7 +248,7 @@ Everything else (<a href="https://github.com/dracos/who-said">source</a>) by <a 
 (<a href="http://twitter.com/dracos">@dracos</a>)</p>
 </body>
 </html>
-<?
+<?php
 }
 
 # Utility functions
@@ -435,7 +435,7 @@ that point in the full episode list of subtitles.
 </p>
 
 <ul id="front_eps">
-<?
+<?php
 
 for ($s=1; $s<=NUM_SERIES; $s++) {
 	for ($e=1; $e<=$episodes[$s]; $e++) {
@@ -472,5 +472,5 @@ for ($s=1; $s<=NUM_SERIES; $s++) {
 </ul>
 </div>
 
-<?
+<?php
 }
