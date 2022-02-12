@@ -1,0 +1,120 @@
+Direction = TIME PERIOD. Vertical = far flung future, mostly vertical = future, 50% = preesnt, mostly horizontal = recent past, horizontal = far flung past. Any which way = mad/ unknown?
+Colour = FEELING.
+Font = 
+======
+B on W
+W on B
+Ghostly
+Indian Earthly
+Firenze
+Chilled Summer
+Blue Meets Orange
+Kindled
+Shooting Star
+Organic Carrot
+Milk Paints
+Moss
+Heat
+
+Font
+====
+
+
+Ep	Summary						    Colour		    Font		    Direction
+==================================================================================================
+1	mannequins, plastic			    Blue sugar	    Steelfish	    Horizontal should be 50%
+2	5 billion years - face of boe	Wordly		    Gunplay		    MostlyV should be V
+3	dickens						    Greyscale	    Berylium	    H
+4	Slitheen					    Asparagus	    Teen		    50%
+5	Slitheen2					    Asparagus	    Teen		    50%
+6	Lone Dalek					    Black on white	Expressway	    50%
+7	Satellite 5, news				Heat		    KenyanCoffee	MostlyV
+8	Trying to save her dad			Wordly		    LovedByTheKing	MostlyH
+9	Gasmask things					White on black	Boopee		    Any which way
+10	Gasmask things 2				White on black	Boopee		    MostlyH
+11	Slitheen 3					    Asparagus	    Gnuolane	    50%
+12	Game shows, intro to daleks		Blue/orange blk	Typodermic	    MostlyV
+13	daleks, death fo eccleston		Blue/orange blk	Typodermic	    50%
+X	ChristmasInvasion, sycorax		Chilled summer	Duality		    50%
+
+1	face of boe - 5billion years	Wordly		    Steelfish	    V
+2	Werewolf, Queen Victoria		Greyscale	    Duality		    MostlyH
+3	School Reunion, K9, 			Chilled summer	Preplay		    50%
+4	Girl in the Fireplace			Blue Sugar	    Bookletter	    Any which way
+5	Cybermen, different universe	Heat		    Gunplay		    50%
+6	Cybermen, different universe 2	Heat		    Gunplay		    50%
+7	Idiot's Lantern, TV				RGB on black	Coolvetica	    MostlyH
+8	Impossible Planet 1, Satan/Ood	Black on white	Kenyan Coffee	MostlyV
+9	2						        Black on white	Kenyan Coffee	MostlyV		
+10	Love&Monsters					Asparagus	    Fridge		    50%
+11	Scary little girl				White on black	Lovedbytheking	50%
+12	Ghosts -> Cybermen -> Daleks	Blue/orange blk	Mailray		    50%
+13	2						        Blue/orange blk	Mailray		    50%
+X	Runaway Bride					Chilled summer	Expressway	    50%
+
+1	Hospital rhinos					Asparagus	    Telephoto	    50%
+2	Shakespeare					    Greyscale	    PowellAntique	H
+3	Gridlock, face of Boe			Wordly		    SweaterSchool	V
+4	Daleks in Manhattan				Blue/orange blk	Gnuolane	    MostlyH
+5	2						        Blue/orange blk	Gnuolane	    MostlyH
+6	Lazarus Experiment, Saxon		Black on white	Typodermic	    50%
+7	42						        Heat		    Fridge		    MostlyV
+8	Dr as human					    Blue Sugar	    Duality		    MostlyH
+9	2						        Blue Sugar	    Duality	M	    MostlyH
+10	Blink						    White on black	LovedByTheKing	50%
+11	Utopia						    Chilled summer	Expressway	    V
+12	2						        Chilled summer	Steelfish	    Any which way
+13	3						        Chilled summer	KenyanCoffee	50%
+X	Titanic, Kylie					Heat		    Berylium	    50%
+
+1	Adipose fat things				Blue Sugar	    Gunplay         H
+2	Pompeii						    Greyscale	    Sexsmith	    50%
+3	Ood						        Black on white	Steelfish       50%? MostlyH?
+4	Sontaran 1					    Asparagus	    MailRay         MostlyV
+5	Sontaran 2					    Asparagus	    MailRay         MostlyV
+6	Doctor's Daughter				Blue/orange	    Boopee          Any which way
+7	Agatha Christie					Chilled summer	PowellAntique   MostlyH
+8	Library 1					    Heat		    Bookletter      50%? MostlyH?
+9	2						        Heat		    Bookletter      50%?
+10	Midnight					    White on Black	Telephoto       MostlyH
+11	Turn Left					    Wordly		    Duality         MostlyV
+12	The Stolen Earth				Blue/orange	    Kenyan Coffee	50%	
+13	Part 2						    Blue/orange	    Kenyan Coffee	50%
+
+X   Next Doctor
+X   Planet of Dead
+X   Waters of Mars
+X   End of Time 1
+X   2
+
+MATT SMITH
+
+1   Eleventh Hour
+2   Beast Below
+3   Victory of Daleks
+4   Time of Angels
+5   Flesh and Stone
+6   Vamps of Venice
+7   Amy's Choice
+8   Hungry Earth
+9   Cold Blood
+10  Vincent + Doctor
+11  Lodger
+12  Pandorica Opens
+13  Big Bang
+X   Christmas Carol
+    
+1   Impossible Astronaut
+2   Day of the Moon
+3   Curse of Black Spot
+4   Doctro's Wife
+5   Rebel Flesh
+6   Almost People
+7   Good man Goes to war
+8   Let's Kill Hitler
+9   Night Terrors
+10  Girl Who Waited
+11  God Complex
+12  Closing Time
+13  Wedding of River Song
+
