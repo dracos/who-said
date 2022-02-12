@@ -69,9 +69,6 @@ $h_query = htmlspecialchars($query);
                 s.parentNode.insertBefore(wf, s);
             })();
         </script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script src="js.js"></script>
 </head>
 <body>
 

@@ -196,15 +196,3 @@ footer a:link, footer a:visited {
 	font-size: 120%;
 	margin: 0 0 0.5em 1em;
 }
-
-#missing {
-    clear: both;
-}
-#missing img {
-    position: absolute;
-    top: -1em;
-    right: -1.5em;
-    cursor: pointer;
-    cursor: hand;
-}
-
