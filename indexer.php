@@ -4,7 +4,7 @@
  * Simple indexer to stick all the Dr Who subtitles into Xapian
  * Oh, how I do like Xapian
  *
- * Matthew Somerville, http://www.dracos.co.uk/
+ * Matthew Somerville, https://dracos.co.uk/
  * Version 1.5, now I have all modern series
  */
 

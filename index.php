@@ -2,7 +2,7 @@
 
 /*
  * Front end for Dr Who subtitles searching, graphing, tagclouding
- * Matthew Somerville, http://www.dracos.co.uk/
+ * Matthew Somerville, https://dracos.co.uk/
  * Version 1.5. Written at Mashed08 and soon after, at some stupid time, so excuse poor code quality ;)
  */
 
@@ -70,12 +70,12 @@ $h_query = htmlspecialchars($query);
             })();
         </script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="js.js"></script>
 </head>
 <body>
 
-<header role="banner"><div><p><a href="http://dracos.co.uk/">Matthew Somerville</a></p></div></header>
+<header role="banner"><div><p><a href="https://dracos.co.uk/">Matthew Somerville</a></p></div></header>
 
 <div id="b">
 
@@ -141,7 +141,7 @@ if (isset($_GET['source'])) {
 			echo "<img width='$size[0]' height='$size[1]' alt='' src='$img'>";
 		}
 	} else {
-		echo '<img alt="" src="http://chart.apis.google.com/chart?chs=860x150&chds=0,' . $max . '&cht=ls&chd=t:';
+		echo '<img alt="" src="https://chart.apis.google.com/chart?chs=860x150&chds=0,' . $max . '&cht=ls&chd=t:';
 		for ($s=1; $s<=NUM_SERIES; $s++) {
 			for ($e=1; $e<=$episodes[$s]; $e++) {
 				if ($s==3 && $e==5) continue;
@@ -262,11 +262,11 @@ function footer() { ?>
 <div style="clear:both"></div>
 </div>
 <footer>
-Subtitle data loaded into a <a href="http://www.xapian.org/">Xapian</a> database,
-graphs plotted with <a href="http://code.google.com/apis/chart/">Google Charts API</a>,
-<br>and tag clouds drawn by <a href="http://wordle.net/">Wordle</a>.
-Everything else (<a href="https://github.com/dracos/who-said">source</a>) by <a href="http://www.dracos.co.uk/">Matthew Somerville</a>
-(<a href="http://twitter.com/dracos">@dracos</a>)
+Subtitle data loaded into a <a href="https://xapian.org/">Xapian</a> database,
+graphs plotted with <a href="https://code.google.com/apis/chart/">Google Charts API</a>,
+<br>and tag clouds drawn by <a href="https://wordle.net/">Wordle</a>.
+Everything else (<a href="https://github.com/dracos/who-said">source</a>) by <a href="https://dracos.co.uk/">Matthew Somerville</a>
+(<a href="https://twitter.com/dracos">@dracos</a>)
 </footer>
 </body>
 </html>
@@ -485,11 +485,6 @@ position, series, episode, or time within episode. Episodes in series 1 to 4 hav
 a representative tag cloud, and search results have a line graph showing usage
 throughout the series. All subtitles on search results are clickable to go to
 that point in the full episode list of subtitles.
-</p>
-
-<p>
-<a href="http://twitter.com/dracos" class="twitter-follow-button" data-show-count="false">Follow @dracos</a>
-<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
 </p>
 
 <ul id="front_eps">

@@ -3,7 +3,7 @@
 /*
  * Simple query parser to search our Dr Who subtitles
  *
- * Matthew Somerville, http://www.dracos.co.uk/
+ * Matthew Somerville, https://dracos.co.uk/
  * Version 1.5
  */
 
