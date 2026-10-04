@@ -7,7 +7,7 @@
  * Version 1.5
  */
 
-include '/usr/share/php/xapian.php';
+#include '/usr/share/php/xapian.php';
 include './config.php';
 
 function search($query, $num = 20) {
@@ -21,7 +21,7 @@ function search($query, $num = 20) {
 	$qp->set_stemmer($stemmer);
 	$qp->set_database($db);
 	$qp->set_stemming_strategy(XapianQueryParser::STEM_SOME);
-	$qp->set_default_op(Query_OP_AND);
+	$qp->set_default_op(XapianQuery::OP_AND);
 	$qp->add_boolean_prefix('align', 'A');
 	$qp->add_boolean_prefix('colour', 'C');
 	$qp->add_boolean_prefix('ep', 'E');

@@ -121,10 +121,10 @@ if (isset($_GET['source'])) {
 		$time = time_index($series, $ep, $row['begin']);
 		#if ($time>1) continue;
 		$text = $row['text'];
-		if (preg_match('#' . $query . '[\s,.!?]+([\w\']+)#i', $text, $m)) $next[strtolower($m[1])]++;
-		if (preg_match('#([\w\']+)[\s,.!?]+' . $query. '#i', $text, $m)) $prev[strtolower($m[1])]++;
-		$eps["$series-$ep"]++;
-		$graph["$series-$ep"]++;
+		if (preg_match('#' . $query . '[\s,.!?]+([\w\']+)#i', $text, $m)) @$next[strtolower($m[1])]++;
+		if (preg_match('#([\w\']+)[\s,.!?]+' . $query. '#i', $text, $m)) @$prev[strtolower($m[1])]++;
+		@$eps["$series-$ep"]++;
+		@$graph["$series-$ep"]++;
 		if ($max < $graph["$series-$ep"]) $max = $graph["$series-$ep"];
 	}	
 	arsort($next); arsort($prev); arsort($eps);
@@ -143,7 +143,7 @@ if (isset($_GET['source'])) {
 			for ($e=1; $e<=$episodes[$s]; $e++) {
 				if ($s==3 && $e==5) continue;
 				if ($s!=1 || $e>1) print ',';
-				echo ($graph["$s-$e"] ? $graph["$s-$e"] : 0);
+				echo ($graph["$s-$e"] ?? 0);
 			}
 		}
 		echo '&chxt=y,x,x&chxl=0:|0|'.$max;
@@ -164,13 +164,16 @@ if (isset($_GET['source'])) {
 	echo '<h2 style="margin-top:0">Stats</h2>';
 
 	if (!preg_match('#series:\d+#', $query) || !preg_match('#ep:\d+#', $query)) {
-		list ($word, $num) = each($eps);
+		$word = key($eps);
+		$num = current($eps);
 		print "<p>&lsquo;$h_query&rsquo; is mentioned most in the episode <strong>" . episode_lookup($word) . "</strong>, $num time" . ($num!=1?'s':'') . "</p>";
 	}
 
-	list ($word, $num) = each($next);
+    $word = key($next);
+    $num = current($next);
 	if ($word) print "<p>The most common word following &lsquo;$h_query&rsquo; is <strong>$word</strong>, $num time" . ($num!=1?'s':'') . ".</p>";
-	list ($word, $num) = each($prev);
+    $word = key($prev);
+    $num = current($prev);
 	if ($word) print "<p>The most common word preceding &lsquo;$h_query&rsquo; is <strong>$word</strong>, $num time" . ($num!=1?'s':'') . ".</p>";
 
 ?>
@@ -186,8 +189,8 @@ if (isset($_GET['source'])) {
 <br>Alignment: <select name="align"><option value="">- Any -<option value="left">Left<option value="center">Centred<option value="right">Right</select>
 <br>Colour: <select name="colour"><option value="">- Any -<option>White<option>Cyan<option>Yellow<option>Green</select>
 <br><input id="form_noise" type="checkbox" name="noise" value="1"> <label for="form_noise">Stage direction?</label>
-<br>Between <input type="text" size="2" name="from" value='<?=htmlspecialchars($_GET['from'])?>'>
-&ndash; <input type="text" size="2" name="to" value='<?=htmlspecialchars($_GET['to'])?>'> minutes in
+<br>Between <input type="text" size="2" name="from" value='<?=htmlspecialchars($_GET['from']??'')?>'>
+&ndash; <input type="text" size="2" name="to" value='<?=htmlspecialchars($_GET['to']??'')?>'> minutes in
 <br><input type="submit" value="Search">
 <p><small>You can also use quoted phrases or use boolean logic.</small></p>
 </form>

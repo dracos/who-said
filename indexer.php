@@ -26,7 +26,7 @@ $colors = array(
 	'#ffffff' => 'white',
 );
 
-include '/usr/share/php/xapian.php';
+#include '/usr/share/php/xapian.php';
 include './config.php';
 
 $db = new XapianWritableDatabase(XAPIAN_DIR . 'write', Xapian::DB_CREATE_OR_OPEN);
